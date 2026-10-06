@@ -1,0 +1,19 @@
+title: Jhalak Agarwal
+description: >-
+  MBA candidate at Berkeley Haas with experience across consulting, product,
+  education, and social impact. Interested in AI product, strategy, and trust & safety.
+url: "https://jhalakagarwal-05.github.io"
+baseurl: ""
+lang: en-US
+markdown: kramdown
+permalink: pretty
+
+author:
+  name: Jhalak Agarwal
+  github: jhalakagarwal-05
+  linkedin: "https://www.linkedin.com/in/jhalak-agarwal-haas"
+
+exclude:
+  - attached_assets
+  - PLAN.md
+  - README.md

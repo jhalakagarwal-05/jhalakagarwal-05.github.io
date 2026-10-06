@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="site-header__inner page-container">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
+      <span class="brand__monogram" aria-hidden="true">JA</span>
+      <span class="brand__name">{{ site.author.name | escape }}</span>
+    </a>
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch color theme"
+      hidden>
+      <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+      <span class="theme-toggle__text">Dark mode</span>
+    </button>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <ul>
+        {% for item in site.data.navigation %}
+          <li>
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

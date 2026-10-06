@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="site-footer__inner page-container">
+    <p class="footer-note">Thanks for visiting.</p>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name | escape }}</p>
+      <ul class="footer-links" aria-label="External links">
+        <li><a href="{{ site.author.linkedin }}">LinkedIn</a></li>
+        <li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Local Ruby bundle
+.bundle/
+vendor/bundle/
+
+# Replit uploads and workspace-only files
+attached_assets/
+.agents/
+.local/
+.cache/
