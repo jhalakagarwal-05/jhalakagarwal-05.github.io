@@ -1,18 +1,18 @@
 :root {
   color-scheme: light;
-  --background: #fcfaf7;
-  --surface: #fffdfb;
-  --surface-soft: #f4ede8;
-  --text: #28242b;
-  --muted: #57515b;
-  --border: #ded3d6;
-  --accent: #68455f;
-  --accent-hover: #50344a;
-  --accent-contrast: #ffffff;
-  --accent-soft: #f0e3ec;
-  --highlight: #eee8dc;
-  --focus: #8a4e75;
-  --shadow: 0 1rem 2.75rem rgb(67 49 57 / 7%);
+  --background: #faf6f0;
+  --surface: #fffdf9;
+  --surface-soft: #f3e9e2;
+  --text: #30252e;
+  --muted: #62555e;
+  --border: #e4d7d3;
+  --accent: #70465f;
+  --accent-hover: #543348;
+  --accent-contrast: #fffaf6;
+  --accent-soft: #f0e3e8;
+  --highlight: #e8e9d9;
+  --focus: #985b79;
+  --shadow: 0 1.25rem 3.5rem rgb(65 41 51 / 8%);
   font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,37 +20,37 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --background: #18171c;
-  --surface: #211f25;
-  --surface-soft: #2c2931;
-  --text: #f6f1f4;
-  --muted: #c1b8c1;
-  --border: #48414a;
-  --accent: #f1bbd2;
-  --accent-hover: #f8d1e2;
-  --accent-contrast: #251621;
-  --accent-soft: #382c38;
-  --highlight: #34322d;
-  --focus: #ffd3e6;
-  --shadow: 0 1rem 2.75rem rgb(0 0 0 / 20%);
+  --background: #211e23;
+  --surface: #2a262d;
+  --surface-soft: #373039;
+  --text: #f6eee8;
+  --muted: #d0c1c7;
+  --border: #51444e;
+  --accent: #e8b9cc;
+  --accent-hover: #f5d2df;
+  --accent-contrast: #30232b;
+  --accent-soft: #3e303a;
+  --highlight: #3a3b32;
+  --focus: #f3c4d7;
+  --shadow: 0 1.25rem 3.5rem rgb(0 0 0 / 22%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --background: #18171c;
-    --surface: #211f25;
-    --surface-soft: #2c2931;
-    --text: #f6f1f4;
-    --muted: #c1b8c1;
-    --border: #48414a;
-    --accent: #f1bbd2;
-    --accent-hover: #f8d1e2;
-    --accent-contrast: #251621;
-    --accent-soft: #382c38;
-    --highlight: #34322d;
-    --focus: #ffd3e6;
-    --shadow: 0 1rem 2.75rem rgb(0 0 0 / 20%);
+    --background: #211e23;
+    --surface: #2a262d;
+    --surface-soft: #373039;
+    --text: #f6eee8;
+    --muted: #d0c1c7;
+    --border: #51444e;
+    --accent: #e8b9cc;
+    --accent-hover: #f5d2df;
+    --accent-contrast: #30232b;
+    --accent-soft: #3e303a;
+    --highlight: #3a3b32;
+    --focus: #f3c4d7;
+    --shadow: 0 1.25rem 3.5rem rgb(0 0 0 / 22%);
   }
 }
 
@@ -69,14 +69,14 @@ body {
   background: var(--background);
   color: var(--text);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: var(--accent);
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
 }
 
 a:hover {
@@ -96,7 +96,7 @@ a {
 }
 
 .page-container {
-  width: min(100% - 2rem, 54rem);
+  width: min(100% - 2.5rem, 58rem);
   margin-inline: auto;
 }
 
@@ -124,10 +124,11 @@ a {
 
 .site-header__inner {
   display: flex;
-  min-height: 5.2rem;
+  min-height: 5.4rem;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.8rem 1.25rem;
-  padding-block: 0.85rem;
+  gap: 0.6rem 1.15rem;
+  padding-block: 0.85rem 0.7rem;
 }
 
 .brand {
@@ -146,15 +147,16 @@ a {
 
 .brand__monogram {
   display: grid;
-  width: 2.35rem;
+  width: 2.45rem;
   aspect-ratio: 1;
   place-items: center;
   border: 1px solid var(--border);
-  border-radius: 0.85rem;
+  border-radius: 50%;
   background: var(--accent-soft);
   color: var(--accent);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
 }
 
 .brand__name {
@@ -182,10 +184,10 @@ a {
 
 .primary-nav a {
   display: inline-block;
-  padding: 0.45rem 0.55rem;
-  border-radius: 0.55rem;
+  padding: 0.42rem 0.55rem;
+  border-radius: 999px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 650;
   text-decoration: none;
   white-space: nowrap;
@@ -199,12 +201,12 @@ a {
 
 .theme-toggle {
   display: inline-flex;
-  min-height: 2.5rem;
+  min-height: 2.55rem;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
   margin-left: auto;
-  padding: 0.45rem 0.7rem;
+  padding: 0.45rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
@@ -228,44 +230,45 @@ a {
 
 .site-main {
   min-height: 65vh;
-  padding-block: clamp(3rem, 8vw, 6.4rem);
+  padding-block: clamp(3.2rem, 8vw, 6.4rem);
 }
 
 .home-page,
 .content-page {
-  max-width: 48rem;
+  max-width: 46rem;
   margin-inline: auto;
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.8rem;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 750;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.12em;
   line-height: 1.4;
   text-transform: uppercase;
 }
 
 .home-page > h1 {
   max-width: 13ch;
-  margin: 0 0 1.15rem;
-  font-size: clamp(2.5rem, 8vw, 4.75rem);
-  font-weight: 720;
-  letter-spacing: -0.065em;
-  line-height: 1.03;
+  margin: 0 0 1.2rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
 }
 
 .home-page > h1 + p {
   max-width: 39rem;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.3rem;
   color: var(--muted);
   font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .home-page > h1 + p + p {
-  margin-top: 1.5rem;
+  margin-top: 1.55rem;
 }
 
 .home-page > h1 + p + p + p {
@@ -305,25 +308,30 @@ a {
 }
 
 .home-page > h2 {
-  margin: clamp(3.75rem, 9vw, 6rem) 0 0.8rem;
-  font-size: clamp(1.65rem, 4vw, 2.3rem);
-  letter-spacing: -0.045em;
-  line-height: 1.18;
+  margin: clamp(3.75rem, 9vw, 6rem) 0 0.9rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
 }
 
 .home-page > ul {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.85rem;
   margin: 1.25rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .home-page > ul > li {
-  padding: 1.2rem 1.3rem;
+  padding: 1.2rem 1.35rem;
   border: 1px solid var(--border);
-  border-radius: 1rem;
+  border-radius: 0.9rem;
   background: var(--surface);
+  box-shadow: 0 0.4rem 1.25rem rgb(65 41 51 / 3%);
 }
 
 .home-page > ul > li strong {
@@ -332,13 +340,16 @@ a {
 
 .page-heading {
   margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .page-heading h1 {
   margin: 0;
-  font-size: clamp(2.65rem, 7vw, 4rem);
-  font-weight: 730;
-  letter-spacing: -0.065em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 7vw, 4.3rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
   line-height: 1.05;
 }
 
@@ -360,8 +371,10 @@ a {
 .prose h2 {
   margin: 2.65rem 0 0.8rem;
   padding-top: 0.4rem;
-  font-size: clamp(1.45rem, 3.7vw, 1.9rem);
-  letter-spacing: -0.04em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3.7vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
   line-height: 1.25;
 }
 
@@ -395,6 +408,7 @@ a {
 
 .site-footer {
   border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .site-footer__inner {
@@ -404,6 +418,9 @@ a {
 .footer-note {
   margin: 0 0 1.2rem;
   color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-style: italic;
 }
 
 .footer-bottom {
@@ -435,9 +452,11 @@ a {
   display: none !important;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 760px) {
   .site-header__inner {
-    gap: 1.5rem;
+    flex-wrap: nowrap;
+    gap: 1.35rem;
+    padding-block: 0.85rem;
   }
 
   .primary-nav {
@@ -454,11 +473,11 @@ a {
 
 @media (max-width: 420px) {
   .page-container {
-    width: min(100% - 1.5rem, 54rem);
+    width: min(100% - 1.5rem, 58rem);
   }
 
   .site-header__inner {
-    gap: 0.7rem;
+    gap: 0.65rem 0.7rem;
   }
 
   .brand {
@@ -467,6 +486,10 @@ a {
 
   .brand__name {
     font-size: 0.92rem;
+  }
+
+  .brand__monogram {
+    width: 2.25rem;
   }
 
   .theme-toggle {

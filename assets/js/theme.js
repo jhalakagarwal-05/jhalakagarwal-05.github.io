@@ -20,8 +20,7 @@
 
   const updateButton = () => {
     const isDark = root.dataset.theme === "dark";
-    button.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-    button.querySelector(".theme-toggle__text").textContent = isDark ? "Light mode" : "Dark mode";
+    button.querySelector(".theme-toggle__text").textContent = isDark ? "Use light mode" : "Use dark mode";
     button.querySelector(".theme-toggle__icon").textContent = isDark ? "☼" : "◐";
   };
 

@@ -1,5 +1,33 @@
-modules = ["ruby-3.2"]
+modules = ["nodejs-24", "python-base-3.13"]
 
 [nix]
 channel = "stable-25_05"
 packages = ["rubyPackages.jekyll"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Jekyll preview"
+
+[[workflows.workflow]]
+name = "Jekyll preview"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "JEKYLL_ENV=production jekyll serve --host 0.0.0.0 --port 5000 --no-watch"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

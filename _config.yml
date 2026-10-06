@@ -6,6 +6,8 @@ url: "https://jhalakagarwal-05.github.io"
 baseurl: ""
 lang: en-US
 markdown: kramdown
+kramdown:
+  input: Kramdown
 permalink: pretty
 
 author:
