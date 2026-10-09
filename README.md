@@ -23,12 +23,30 @@ The site is configured as a GitHub user site: `url` is set to `https://jhalakaga
 
 Keep factual claims consistent with the information you want to publish. The email address and phone number from the résumé are intentionally not included.
 
+The original uploads in `attached_assets/` are excluded from the site build and ignored by Git so the résumé is not accidentally published.
+
+## Technical choices
+
+- Native Jekyll layouts and includes share the navigation, footer, and page structure.
+- Standard Kramdown Markdown keeps the site compatible with GitHub Pages without extra plugins.
+- SEO metadata is in `_includes/head.html`; `sitemap.xml` uses the navigation data so the listed pages stay consistent.
+- System fonts avoid external font requests. Warm pastel surfaces use high-contrast text in both themes.
+- The only JavaScript is the theme button, which follows the system preference initially and remembers an explicit choice in the browser. Without JavaScript, the theme follows the system preference.
+- The Replit preview runs Jekyll's built-in preview command. It is not a separate application or backend and is not needed by GitHub Pages.
+
+## Assumptions
+
+- The supplied repository name means the GitHub owner is `jhalakagarwal-05` and the user-site repository is `jhalakagarwal-05.github.io`.
+- No reference websites or named fonts were supplied; the design interprets “warm and pastels” with friendly system fonts and serif headings.
+- The supplied résumé and About text are the sources for all professional claims; some wording is shortened for readability.
+
 ## Preview locally
 
-Install Ruby and Bundler, then install Jekyll:
+Install Ruby, then install Jekyll and its local preview HTTP dependency:
 
 ```sh
-gem install bundler jekyll
+gem install jekyll webrick
+jekyll build
 jekyll serve
 ```
 
@@ -37,3 +55,5 @@ Open `http://127.0.0.1:4000/`. Jekyll rebuilds the site as you edit files. If pr
 ## Run Lighthouse
 
 With the local preview running, open Chrome DevTools, choose **Lighthouse**, select Performance, Accessibility, Best Practices, and SEO, then run an audit. Test both mobile and desktop. The layout is designed for 375px and 1280px viewports; re-run the audits after changing content, styles, or scripts.
+
+Aim for at least 90 in each category. Audit all four pages, check both themes and their keyboard focus states, and confirm navigation works. Repeat on the published GitHub Pages URL because hosting and network conditions can affect the results.
