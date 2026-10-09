@@ -13,3 +13,6 @@ attached_assets/
 .agents/
 .local/
 .cache/
+
+# Generated verification reports
+/generated-artifacts/

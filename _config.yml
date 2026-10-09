@@ -17,5 +17,6 @@ author:
 
 exclude:
   - attached_assets
+  - generated-artifacts
   - PLAN.md
   - README.md
