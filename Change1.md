@@ -1,7 +1,7 @@
 # Change 1: Clearer professional homepage introduction
 
 **Branch confirmed:** `improve-home-introduction`  
-**Status:** Awaiting approval. No website changes have been made.
+**Status:** Approved, implemented, and locally verified. Changes remain uncommitted; no push, merge, or publication has been performed.
 
 ## Current issue or opportunity
 
@@ -52,4 +52,24 @@ After approval:
 
 ## Approval gate
 
-Wait for the user's approval before editing any website file. Approval of this plan does not authorize a commit, push, merge, or publication.
+The user approved this plan before website edits began. Approval of this plan does not authorize a commit, push, merge, or publication.
+
+## Verification results
+
+- Jekyll build passed; `Change1.md` is excluded from site output.
+- The approved introduction renders exactly. The existing achievement section and metrics are unchanged.
+- The homepage title, single main heading, description, navigation, and homepage links passed checks.
+- Both themes display without horizontal overflow at 375px and 1280px. Theme switching and remembered preference work.
+- No browser console or resource errors were observed.
+- The diff is limited to `index.md`, `_config.yml`, and this document. No new application or website dependencies were added.
+
+Local homepage Lighthouse results:
+
+| Width | Theme | Performance | Accessibility | Best Practices | SEO |
+| --- | --- | --- | --- | --- | --- |
+| 375px | Light | 99 | 100 | 100 | 100 |
+| 375px | Dark | 99 | 100 | 100 | 100 |
+| 1280px | Light | 100 | 100 | 100 | 100 |
+| 1280px | Dark | 100 | 100 | 100 | 100 |
+
+These results are from the local Jekyll preview, not a published deployment.
