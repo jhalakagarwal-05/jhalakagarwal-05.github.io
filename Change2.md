@@ -2,7 +2,7 @@
 
 **Branch confirmed:** `improve-keyboard-navigation`
 
-**Status:** Awaiting approval. No website files have been changed.
+**Status:** Implemented and locally verified on `improve-keyboard-navigation`. No staging, commit, push, merge, or publication has been performed for this improvement.
 
 ## Current issue
 
@@ -61,4 +61,38 @@ After approval:
 
 ## Approval gate
 
-Wait for the user's approval of this alternative before editing any website file. Approval to implement does not authorize a commit, push, merge, or publication.
+The user approved this alternative before website edits began. Approval to implement does not authorize a commit, push, merge, or publication.
+
+## Verification results
+
+- The Jekyll build passed. All four pages have unique main and navigation targets and a footer return link.
+- Chromium keyboard checks passed in 32 combinations: four pages, two widths (375px and 1280px), two themes, and JavaScript enabled or disabled.
+- The existing skip link remains the first Tab stop and moves focus to main content.
+- The footer link is reachable with Tab. Enter moves focus to primary navigation, displays an unclipped 3px outline, and the next Tab reaches Home.
+- Forward and reverse Tab order, navigation activation with Enter, current-page indication, theme switching, and theme persistence passed.
+- No keyboard trap, horizontal overflow, browser console error, or failed resource request was observed.
+- Both system color themes work with JavaScript disabled. The reduced-motion preference retains nonanimated scrolling.
+- `Change1.md`, `index.md`, `_layouts/default.html`, and the existing theme JavaScript are byte-for-byte unchanged.
+- Both assignment documents are excluded from published site output. `Change2.md` remains in the repository root.
+- Implementation uses HTML and CSS only. The navigation's scroll margin keeps its focus outline clear of the viewport edge after the jump.
+
+## Specific checks to perform
+
+1. Reload a page, then press Tab. The “Skip to content” link should appear with a visible outline.
+2. Press Enter to skip the header, then Tab. Focus should move into the page's content links.
+3. Continue tabbing until “Back to navigation” in the footer is focused. It should have a visible outline and be separate from the external links.
+4. Press Enter. Focus should move to the primary-navigation region, with an outline visible around it.
+5. Press Tab. Home should receive focus. Use Shift+Tab to move backward and Enter to activate navigation links; there should be no trap or extra ordinary Tab stop on the navigation container.
+6. Repeat on Home, About, Work Experience, and Contact in both themes, at 375px and 1280px.
+7. In a standalone app-preview tab, disable JavaScript and reload. Repeat the skip and footer-return checks. With reduced motion enabled, scrolling should not animate.
+
+Optional terminal checks:
+
+```sh
+git branch --show-current
+JEKYLL_ENV=production jekyll build
+git diff --check
+git diff -- Change1.md index.md _layouts/default.html assets/js/theme.js
+```
+
+The branch should be `improve-keyboard-navigation`, the build should succeed, and both diff checks should produce no output.

@@ -84,7 +84,8 @@ a:hover {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+.primary-nav:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 4px;
   border-radius: 0.25rem;
@@ -166,6 +167,7 @@ a {
 .primary-nav {
   order: 3;
   flex: 1 0 100%;
+  scroll-margin-block-start: 0.75rem;
 }
 
 .primary-nav ul,
