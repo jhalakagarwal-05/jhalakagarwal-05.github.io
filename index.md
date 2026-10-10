@@ -1,13 +1,13 @@
 ---
 layout: home
 title: Home
-description: MBA candidate at Berkeley Haas with experience across consulting, product, education, and social impact.
+description: Berkeley Haas MBA candidate with consulting, product, education, and social-impact experience, interested in AI product, strategy, and trust & safety roles.
 permalink: /
 ---
 
 # Jhalak Agarwal
 
-I’m an MBA candidate at Berkeley Haas with experience across consulting, product, education, and social impact. I’m increasingly drawn to the role AI can play in solving complex business and societal challenges.
+I’m an MBA candidate at Berkeley Haas interested in AI product, strategy, and trust & safety roles. My experience spans consulting, product, education, and social impact, including product and growth initiatives, AI-enabled business workflows, and workforce and education programs. I want to help create technology that is useful, trustworthy, and accessible.
 
 [Explore my experience]({{ '/work-experience/' | relative_url }}){: .button .button--primary}
 
@@ -21,6 +21,6 @@ I’m an MBA candidate at Berkeley Haas with experience across consulting, produ
 
 ## Looking ahead
 
-I hope to build a career in **AI product, strategy, or trust & safety**, helping create technology that is useful, trustworthy, and accessible to more people.
+I’m increasingly drawn to the role AI can play in solving complex business and societal challenges.
 
 [Get in touch]({{ '/contact/' | relative_url }}){: .text-link}
